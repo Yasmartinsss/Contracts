@@ -37,3 +37,11 @@ class AppController:
         if self.current_view:
             self.current_view.destroy()
         self.current_view = FilterByDaysView(self.root, self)
+from controllers.contract_sqlite_controller import create_contract, list_contracts
+
+def add_new_contract(self, descricao, categoria, vencimento, fornecedor):
+    create_contract(descricao, categoria, vencimento, fornecedor)
+
+def display_contracts(self):
+    contracts = list_contracts()
+    print(contracts)  # Exibir ou passar para a interface gráfica
